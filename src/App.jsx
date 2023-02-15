@@ -8,7 +8,7 @@ function App() {
     <div>
    <h1>To-DO</h1>
    <h3>A task list that enables users to add their daily tasks</h3>
-   <button></button>
+   <button>Get Started</button>
     </div>
   )
 }
