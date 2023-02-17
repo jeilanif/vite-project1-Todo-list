@@ -5,7 +5,8 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div>
+    <div id="main">
+      <img src="https://source.unsplash.com/VuwAfoHpxgs"></img>
     <div id="box">
   <div id="box-items">
    <h1 id="title">To-DO</h1>
