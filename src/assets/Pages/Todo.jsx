@@ -1,6 +1,8 @@
 import React from 'react'
 import './Todo.css'
 import classNames from 'classnames';
+import '@fortawesome/fontawesome-free/css/all.css';
+
 
 
 function Todo() {
@@ -61,13 +63,15 @@ return (
           </span>
           <div className='todo-actions'> 
             <button className='delete-btn' onClick={() => handleDelete(item.id)}>
-              Delete
+            <i class="fa-sharp fa-solid fa-delete-left"></i>
             </button>
             <button
               className='complete-btn'
               onClick={() => handleComplete(item.id)}
             >
-              Completed!
+               {item.completed ? 
+              <i class="fa-sharp fa-solid fa-square-check"></i>: 
+              <i class="fa-sharp fa-regular fa-square-check"></i>}
             </button>
           </div>
         </li>
