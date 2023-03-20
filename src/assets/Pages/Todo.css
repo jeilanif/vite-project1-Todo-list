@@ -61,7 +61,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    background-color: black
+    background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease-in-out;
@@ -80,7 +80,7 @@ body {
   }
   
   .delete-btn,
-  .edit-btn {
+  .complete-btn {
     margin-left: 10px;
     padding: 5px 10px;
     background-color: #F05454;
@@ -92,15 +92,25 @@ body {
   }
   
   .delete-btn:hover,
-  .edit-btn:hover {
+  .complete-btn:hover {
     background-color: #ff2e2e;
   }
   
-  .edit-btn:focus {
+  .complete-btn:focus {
     outline: none;
   }
   
   .delete-btn:focus {
     outline: none;
   }
+
+  
+  .todo-item.completed {
+    background-color: #e6e6e6;
+  }
+  
+  .todo-item.completed .todo-text {
+    text-decoration: line-through;
+  }
+
   
