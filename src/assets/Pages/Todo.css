@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 0 20px;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    flex-grow: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #39b54a;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #338033;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /** Todo item lists CSS*/
+  .todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .todo-text {
+    flex-grow: 1;
+  }
+  
+  .todo-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .delete-btn,
+  .edit-btn {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #ff6961;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .delete-btn:hover,
+  .edit-btn:hover {
+    background-color: #ff2e2e;
+  }
+  
+  .edit-btn:focus {
+    outline: none;
+  }
+  
+  .delete-btn:focus {
+    outline: none;
+  }
+  

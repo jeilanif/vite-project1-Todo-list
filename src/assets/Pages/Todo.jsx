@@ -1,4 +1,5 @@
 import React from 'react'
+import './Todo.css'
 
 function Todo() {
   const [items, setItems] = React.useState([])
@@ -23,16 +24,25 @@ const handleDelete = (id) => {
 }
 
   return (
-    <div>
+    <div className='container'>
       <h1> Today's List of Tasks</h1>
       <form onSubmit={handleSubmit}>
         <input name="item"  />
         <button>Add Task</button>
       </form>
-      <ul>
+      <ul className='task-box'>
         {items.map((item) => (
-          <li key={item.id}>{item.text}
-          <button onClick={()=> handleDelete(item.id)}> Delete </button>
+          <li
+           key={item.id}
+           className='todo-item'
+          
+          >
+           <span className='todo-text'> {item.text}</span>
+           <div className='todo-actions'> 
+           <button className='delete-btn' onClick={()=> handleDelete(item.id)}> Delete </button>
+           <button className='edit-btn'> EDIT </button>
+           </div>
+
           
           </li>
         ))}
