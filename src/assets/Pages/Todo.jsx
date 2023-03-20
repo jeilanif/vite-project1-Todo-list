@@ -9,12 +9,18 @@ function Todo() {
     if (newItemText !== '') {
     const newItem ={
       id: new Date().getTime(),
-      text: e.target.item.value
+      text: e.target.item.value,
+      completed: false
     };
     setItems([...items, newItem]);
     e.target.reset();
   }
 };
+
+const handleDelete = (id) => {
+  const updatedItems = items.filter(item => item.id !== id); 
+  setItems(updatedItems)
+}
 
   return (
     <div>
@@ -24,8 +30,11 @@ function Todo() {
         <button>Add Task</button>
       </form>
       <ul>
-        {items.map(item => (
-          <li key={item.id}>{item.text}</li>
+        {items.map((item) => (
+          <li key={item.id}>{item.text}
+          <button onClick={()=> handleDelete(item.id)}> Delete </button>
+          
+          </li>
         ))}
       </ul>
     </div>
