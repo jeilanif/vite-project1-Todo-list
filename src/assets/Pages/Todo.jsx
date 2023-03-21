@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './Todo.css'
 import classNames from 'classnames';
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -7,21 +7,33 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 function Todo() {
   const [items, setItems] = React.useState([])
+  /** store active todo items in localstorage */
+  React.useEffect(() => {
+    const storedItems = localStorage.getItem('todoItems');
+      if (storedItems) {
+      setItems(JSON.parse(storedItems));
+    }
+  }, []);
+
+  /** to get items out of local storage back to the state */
+  React.useEffect(() => {
+    localStorage.setItem('todoItems', JSON.stringify(items));
+  }, [items]);
+
 
   function handleSubmit(e) {
     e.preventDefault();  /** to prevent page from refreshing and saves list  */
-    const newItemText = event.target.item.value.trim(); /** to prevent items that lead with spaces or blank space to be submited */
+    const newItemText = e.target.item.value.trim();
     if (newItemText !== '') {
-    const newItem ={
-      id: new Date().getTime(),
-      text: e.target.item.value,
-      completed: false
-    };
-    setItems([...items, newItem]);
-    e.target.reset();
-  }
-};
-
+      const newItem ={
+        id: new Date().getTime(),
+        text: newItemText,
+        completed: false
+      };
+      setItems([...items, newItem]);
+      e.target.reset();
+    }
+  };
 const handleDelete = (id) => {
   const updatedItems = items.filter(item => item.id !== id); 
   setItems(updatedItems)
@@ -63,15 +75,15 @@ return (
           </span>
           <div className='todo-actions'> 
             <button className='delete-btn' onClick={() => handleDelete(item.id)}>
-            <i class="fa-sharp fa-solid fa-delete-left"></i>
+            <i className="fa-sharp fa-solid fa-delete-left"></i>
             </button>
             <button
               className='complete-btn'
               onClick={() => handleComplete(item.id)}
             >
                {item.completed ? 
-              <i class="fa-sharp fa-solid fa-square-check"></i>: 
-              <i class="fa-sharp fa-regular fa-square-check"></i>}
+              <i className="fa-sharp fa-solid fa-square-check"></i>: 
+              <i className="fa-sharp fa-regular fa-square-check"></i>}
             </button>
           </div>
         </li>
