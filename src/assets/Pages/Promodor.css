@@ -1,0 +1,44 @@
+/* Add your CSS styles for the PromodorApp component */
+
+.promodor-app {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+  }
+  
+  .promodor-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .timer {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .long-break {
+    background-color: #dc3545;
+  }
+  
+  .short-break {
+    background-color: #28a745;
+  }
+  
